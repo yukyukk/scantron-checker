@@ -1,0 +1,11 @@
+C:\Users\AlecBp\Documents\repos\scantron-checker\bin\Debug\netcoreapp2.1\scantron-checker.deps.json
+C:\Users\AlecBp\Documents\repos\scantron-checker\bin\Debug\netcoreapp2.1\scantron-checker.runtimeconfig.json
+C:\Users\AlecBp\Documents\repos\scantron-checker\bin\Debug\netcoreapp2.1\scantron-checker.runtimeconfig.dev.json
+C:\Users\AlecBp\Documents\repos\scantron-checker\bin\Debug\netcoreapp2.1\scantron-checker.dll
+C:\Users\AlecBp\Documents\repos\scantron-checker\bin\Debug\netcoreapp2.1\scantron-checker.pdb
+C:\Users\AlecBp\Documents\repos\scantron-checker\obj\Debug\netcoreapp2.1\scantron-checker.csprojAssemblyReference.cache
+C:\Users\AlecBp\Documents\repos\scantron-checker\obj\Debug\netcoreapp2.1\scantron-checker.csproj.CoreCompileInputs.cache
+C:\Users\AlecBp\Documents\repos\scantron-checker\obj\Debug\netcoreapp2.1\scantron-checker.AssemblyInfoInputs.cache
+C:\Users\AlecBp\Documents\repos\scantron-checker\obj\Debug\netcoreapp2.1\scantron-checker.AssemblyInfo.cs
+C:\Users\AlecBp\Documents\repos\scantron-checker\obj\Debug\netcoreapp2.1\scantron-checker.dll
+C:\Users\AlecBp\Documents\repos\scantron-checker\obj\Debug\netcoreapp2.1\scantron-checker.pdb
