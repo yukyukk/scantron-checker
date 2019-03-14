@@ -20,6 +20,22 @@ namespace c_project
             Console.WriteLine("Error: " + error.Message);
          }
       }
+      static void writeNewLineToFile(string target, string newLine)
+      {
+         string content;
+         content = readFromFile(target);
+         content += newLine;
+         try
+         {
+            StreamWriter sw = new StreamWriter(target);
+            sw.Write(content);
+            sw.Close();
+         }
+         catch (Exception error)
+         {
+            Console.WriteLine("Error: " + error.Message);
+         }
+      }
       static string readFromFile(string target)
       {
          String line, fullFile = "";
@@ -31,8 +47,8 @@ namespace c_project
             while (line != null)
             {
                // After checking the line is not null adds the string to fullFile (keeps looping)
-               fullFile += line + "\n";
-               Console.WriteLine("newl: " + line);
+               fullFile += line+"\n";
+               // Console.WriteLine("newl: " + line);
                line = sr.ReadLine();
             }
             sr.Close();
@@ -76,6 +92,7 @@ namespace c_project
       static void Main(string[] args)
       {
          string target = "files/scantron2.txt";
+         string newFileName = target.Substring(0, target.Length-4)+"_results_"+DateTime.Now.ToString("HH-mm-ss")+".txt";
 
          List<string> lines = new List<string>();
          lines = readToList(target);
@@ -94,11 +111,11 @@ namespace c_project
             Console.WriteLine("ID: {0} | Answers: {1}", pair[0], pair[1]);
             ids[i] = Convert.ToInt32(pair[0]);
             answers[i] = pair[1];
-            
+
             // Calculate score
             for (int letter = 0; letter < answers[i].Length; letter++)
             {
-               if (answers[i][letter] == 'X') {}
+               if (answers[i][letter] == 'X') { }
                else if (answers[i][letter] == answerKey[letter])
                {
                   score[i] += 4;
@@ -109,6 +126,9 @@ namespace c_project
                }
             }
 
+            // Add result line in file
+            string toWrite = $"ID: {ids[i]} | ANSWERS: {answers[i]} | SCORE: {score[i]}";
+            writeNewLineToFile(newFileName, toWrite);
          }
 
          while (true)
@@ -117,13 +137,6 @@ namespace c_project
             if (input == -1) break;
             Console.WriteLine("Student ID is {0} the answers were {1} the result is {2}", ids[input], answers[input], score[input]);
          }
-
-
-
-         // file = readFromFile(target);
-         // Console.WriteLine("file: " + file);
-         // writeToFile(target, file + DateTime.Now.ToString("HH:mm:ss tt"));
-         // Console.WriteLine("Finished execution");
       }
    }
 }
